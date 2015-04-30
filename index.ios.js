@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Alternative UI for date/time selection
+ * https://github.com/christopherdro/react-native-alt-date-time-picker
  */
 'use strict';
 
@@ -17,7 +17,6 @@ var {
 class AltDateTimePicker extends React.Component{
     constructor(props){
     super(props);
-
     this.state = {
       date: moment().add(30 - moment(new Date()).minutes() % 30, 'minutes')
     }
@@ -27,7 +26,7 @@ class AltDateTimePicker extends React.Component{
   Date selector buttons
   */
   subtractDay(){
-    if (moment(this.state.date).isSame(new Date, 'day')) return;    // Disable going back with date selection
+    // if (moment(this.state.date).isSame(new Date, 'day')) return;    // Disable going back with date selection
     this.setState({ date: moment(this.state.date).subtract(1, 'day') });
   }
 
@@ -66,6 +65,7 @@ class AltDateTimePicker extends React.Component{
             <Text style={styles.text}>+</Text>
           </TouchableHighlight>
         </View>
+        
         <View style={styles.rowContainer}>
           <TouchableHighlight
             onPress={this.subtractTime.bind(this)}
@@ -81,7 +81,7 @@ class AltDateTimePicker extends React.Component{
             <Text style={styles.text}>+</Text>
           </TouchableHighlight>
         </View>
-    </View>
+      </View>
     );
   }
 };
