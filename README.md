@@ -1,3 +1,3 @@
-## React Native - DateTime Picker
+## react-native-alt-date-time-picker
 
-Alternative UI for date/time selection
+Alternative UI for date/time selection using moment.js
